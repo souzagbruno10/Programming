@@ -10,7 +10,7 @@ public class Arrays {
         foods[1] = "hamburguer";
         foods[2] = "pasta";
 
-        System.out.println("Cardápio de hoje: " + foods[1]);
+        System.out.println("Cardapio de hoje: " + foods[1]);
 
     }
 }
