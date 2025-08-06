@@ -10,7 +10,11 @@ public class Arrays {
         foods[1] = "hamburguer";
         foods[2] = "pasta";
 
-        System.out.println("Cardapio de hoje: " + foods[1]);
+        for (int i = 0; i < 3; i++) {
+            int count = i;
+            System.out.println("Comida - " + count + ": " + foods[i]);
+        }
+
 
     }
 }
