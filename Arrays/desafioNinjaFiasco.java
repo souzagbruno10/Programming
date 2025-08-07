@@ -8,9 +8,8 @@ public class desafioNinjaFiasco {
 
         Scanner scanner = new Scanner(System.in);
 
-        String[] nameNinja = new String[5];
-
         int option;
+        String[] nameNinja = null;
 
         do {
 
@@ -29,15 +28,25 @@ public class desafioNinjaFiasco {
                     int n;
                     System.out.println("Digite a quantidade de ninjas para cadastrar: ");
                     n = scanner.nextInt();
+                    scanner.nextLine();
+
+                    nameNinja = new String[n];
 
                     for (int i = 0; i < n; i++) {
                         System.out.println("Digite o nome do ninja " + i + " :");
-                        nameNinja[i] = scanner.next();
+                        nameNinja[i] = scanner.nextLine();
                     }
                     break;
                 case 2:
 
                     System.out.println("------------Ninjas Cadastrados-------------");
+                    if (nameNinja == null){
+                        System.out.println("Nenhum ninja cadastrado!");
+                    }else{
+                        for (int i = 0; i < nameNinja.length; i++){
+                            System.out.println((i + 1) + "." + nameNinja[i]);
+                        }
+                    }
                     System.out.print(Arrays.toString(nameNinja));
                     break;
                 case 3:
