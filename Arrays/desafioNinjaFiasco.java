@@ -10,29 +10,50 @@ public class desafioNinjaFiasco {
 
         String[] nameNinja = new String[5];
 
+        int option;
 
-        System.out.println("=======CADASTRO DE NINJAS=======");
-        for (int i = 0; i < 5; i++) {
-            int counter = i;
+        do {
 
+            System.out.println("\n===== Menu Ninja =====");
+            System.out.println("1. Cadastrar Ninja");
+            System.out.println("2. Listar Ninjas");
+            System.out.println("3. Sair");
+            System.out.print("Escolha uma opção: ");
+            option = scanner.nextInt();
 
-            System.out.println("Digite o nome do ninja " + counter + " :");
-            nameNinja[i] = scanner.nextLine();
+            switch (option) {
 
-            System.out.println("Deseja sair?: [1] sim | [0] não: ");
-            int choose = scanner.nextInt();
-            scanner.nextLine(); //limpa o buffer
+                case 1:
 
-            if(choose == 1)
-            {
-                break;
+                    System.out.println("=======CADASTRO DE NINJAS=======");
+                    int n;
+                    System.out.println("Digite a quantidade de ninjas para cadastrar: ");
+                    n = scanner.nextInt();
+
+                    for (int i = 0; i < n; i++) {
+                        System.out.println("Digite o nome do ninja " + i + " :");
+                        nameNinja[i] = scanner.next();
+                    }
+                    break;
+                case 2:
+
+                    System.out.println("------------Ninjas Cadastrados-------------");
+                    System.out.print(Arrays.toString(nameNinja));
+                    break;
+                case 3:
+
+                    System.out.println("Deseja sair?: [1] sim | [0] não: ");
+                    int choose = scanner.nextInt();
+
+                    if (choose == 1) {
+                        System.out.println("Saindo...");
+                        return;
+                    }
+                    break;
+                default:
+                    System.out.println("Opção Inválida tente novamente!");
             }
-        }
-            System.out.println("------------Ninjas Cadastrados-------------");
-            System.out.print(Arrays.toString(nameNinja));
-
-        }
-
+        } while (true);
     }
-
+}
 
